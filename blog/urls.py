@@ -7,5 +7,8 @@ from . import views
 #このパターンは誰かがあなたのWebサイトの 'http://127.0.0.1:8000/' というアドレスにアクセスしてきたら views.post_list が正しい行き先だということをDjangoに伝えます。
 urlpatterns=[
     path('',views.post_list,name='post_list')
+    #post/はURLがpostに続けて/で始まることを意味する．
+    #<int:pk>これはDjangoは整数の値を期待し、その値がpkという名前の変数でビューに渡されることを意味しています。
+    path('post/<int:pk>/',views.post_detail,name='post_detail'),
 ]
 ##practice for github
