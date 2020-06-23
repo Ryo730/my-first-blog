@@ -6,7 +6,7 @@ from . import views
 #Djangoはビューを見つけるとき、URLのパス(path)の前にくっつくドメイン名（つまり、http://127.0.0.1:8000/ の部分）を無視します。
 #このパターンは誰かがあなたのWebサイトの 'http://127.0.0.1:8000/' というアドレスにアクセスしてきたら views.post_list が正しい行き先だということをDjangoに伝えます。
 urlpatterns=[
-    path('',views.post_list,name='post_list')
+    path('',views.post_list,name='post_list'),
     #post/はURLがpostに続けて/で始まることを意味する．
     #<int:pk>これはDjangoは整数の値を期待し、その値がpkという名前の変数でビューに渡されることを意味しています。
     path('post/<int:pk>/',views.post_detail,name='post_detail'),
