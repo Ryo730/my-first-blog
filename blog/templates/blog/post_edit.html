@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{%block content%}
+    <h2>New Post</h2>
+    <!--formタグ＝入力フォームや送信フォームを表示させたい時に使う．-->
+    <form method="POST" class="post-form">{% csrf_token %}
+         <!--formの内容をpタグで囲って表示-->
+         <!--method属性を使えば，入力したフォーム内容はURIと別の場所に保管されてデータが表示される．-->
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{%endblock%}
